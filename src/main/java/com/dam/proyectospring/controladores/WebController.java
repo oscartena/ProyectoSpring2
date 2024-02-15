@@ -14,6 +14,11 @@ public class WebController {
     @Autowired
     private PilotoServicio pilotoServicio;
 
+    @Autowired
+    public WebController(PilotoServicio pilotoServicio) {
+        this.pilotoServicio = pilotoServicio;
+    }
+
     @RequestMapping(value ="/")
     public String index(Model model) {
         List<Piloto> pilotos = pilotoServicio.findAllPilotos();
